@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dni31sybguyb0"]
+
+[ext_resource type="FontFile" uid="uid://cp6vijshrqdac" path="res://Game Main/Assets/pixel_font.ttf" id="1_4uqoj"]
+[ext_resource type="Script" path="res://Game Main/game_menu.gd" id="2_07f8y"]
+
+[sub_resource type="Theme" id="Theme_k7di4"]
+default_font = ExtResource("1_4uqoj")
+
+[node name="Game Menu" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_k7di4")
+script = ExtResource("2_07f8y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="StartGameButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start Game"
+
+[node name="ExitGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]

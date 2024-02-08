@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm8mgfkp6nbdt"]
+
+[ext_resource type="Script" path="res://Interactables/EndPole/level_complete.gd" id="1_r05q4"]
+[ext_resource type="Texture2D" uid="uid://clbqdl1820upi" path="res://Interactables/EndPole/Assets/endpole.png" id="2_ujju4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8q0wg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ujju4")
+}],
+"loop": true,
+"name": &"endpole",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_noswr"]
+size = Vector2(25, 41)
+
+[node name="Levelcomplete" type="Area2D"]
+script = ExtResource("1_r05q4")
+
+[node name="Endpole" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5.125, -1.73864)
+scale = Vector2(0.522727, 0.522727)
+sprite_frames = SubResource("SpriteFrames_8q0wg")
+animation = &"endpole"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -5)
+shape = SubResource("RectangleShape2D_noswr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

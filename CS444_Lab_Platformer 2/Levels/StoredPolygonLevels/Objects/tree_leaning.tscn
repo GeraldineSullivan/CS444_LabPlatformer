@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3pmvan0var1w"]
+
+[ext_resource type="Texture2D" uid="uid://dbaijxa5lh46k" path="res://Levels/StoredPolygonLevels/Objects/Assets/tree_bare.png" id="1_yw85r"]
+
+[node name="TreeLeaning" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(28.75, -23.5925)
+scale = Vector2(0.0715613, 0.0715614)
+texture = ExtResource("1_yw85r")

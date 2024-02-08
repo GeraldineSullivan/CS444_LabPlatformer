@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx5gwa2h6sk2t"]
+
+[ext_resource type="Texture2D" uid="uid://c8jkje6bvjveo" path="res://Particles/circle.png" id="1_lqt15"]
+
+[sub_resource type="Gradient" id="Gradient_xboc1"]
+offsets = PackedFloat32Array(0.0222222, 0.17037, 0.288889, 0.607407, 0.811111, 0.981481)
+colors = PackedColorArray(0.976471, 0.811765, 0, 0, 0.976471, 0.811765, 0, 1, 0.980392, 0.533333, 0, 1, 1, 0, 0.00784314, 1, 0.419608, 0, 0.00392157, 1, 1, 0, 0.00784314, 0.00392157)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lirru"]
+gradient = SubResource("Gradient_xboc1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aa80t"]
+particle_flag_disable_z = true
+direction = Vector3(2.08165e-12, -1, 2.08165e-12)
+initial_velocity_min = 105.26
+initial_velocity_max = 200.0
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+color_ramp = SubResource("GradientTexture1D_lirru")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 400
+process_material = SubResource("ParticleProcessMaterial_aa80t")
+texture = ExtResource("1_lqt15")

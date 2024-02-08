@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7hs7fmli8vdm"]
+
+[ext_resource type="Script" path="res://Interactables/Checkpoints/checkpoint.gd" id="1_2o2nn"]
+[ext_resource type="Texture2D" uid="uid://ju0mh26njymf" path="res://Interactables/Checkpoints/Assets/flag-animation.png" id="2_y5i15"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k4p7"]
+atlas = ExtResource("2_y5i15")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn56o"]
+atlas = ExtResource("2_y5i15")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fx86"]
+atlas = ExtResource("2_y5i15")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egf1e"]
+atlas = ExtResource("2_y5i15")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hswv"]
+atlas = ExtResource("2_y5i15")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owc03"]
+atlas = ExtResource("2_y5i15")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uolcx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k4p7")
+}],
+"loop": true,
+"name": &"unvisited",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn56o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fx86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egf1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hswv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owc03")
+}],
+"loop": true,
+"name": &"visited",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4i1b"]
+size = Vector2(26, 39)
+
+[node name="Checkpoint" type="Node2D"]
+position = Vector2(15, -18)
+script = ExtResource("1_2o2nn")
+
+[node name="Checkflag" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_uolcx")
+animation = &"visited"
+frame_progress = 0.67067
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+visibility_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-8, -1)
+shape = SubResource("RectangleShape2D_e4i1b")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

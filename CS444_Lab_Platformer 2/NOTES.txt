@@ -1,0 +1,10 @@
+I already added a tween to the heart collectables before I saw final lab.
+It does similar to what was suggested on the document.
+
+I have instead added a dust trail to the Dash ability. Press D to dash
+I've also added particles to the Volcano in Level 4, so that it looks fun
+
+TO DO:
+I didn't have time to get a proper "end game" screen working. 
+So for now it's a label that says GAME OVER, with a delay before game quits
+

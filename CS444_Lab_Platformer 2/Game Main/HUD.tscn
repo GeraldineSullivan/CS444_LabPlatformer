@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://b43f556ntng2s"]
+
+[ext_resource type="FontFile" uid="uid://cp6vijshrqdac" path="res://Game Main/Assets/pixel_font.ttf" id="1_2y8hv"]
+
+[node name="CenterContainer" type="CenterContainer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+use_top_left = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
+
+[node name="not_enough_hearts" type="Label" parent="HUD"]
+offset_left = 108.0
+offset_top = 12.0
+offset_right = 280.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("1_2y8hv")
+theme_override_font_sizes/font_size = 10
+text = "You need 60 hearts to progress"

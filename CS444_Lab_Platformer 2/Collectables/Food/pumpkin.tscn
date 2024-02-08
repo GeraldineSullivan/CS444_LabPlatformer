@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy2gu6bvsrpaj"]
+
+[ext_resource type="Script" path="res://Collectables/Food/Scripts/pumpkin.gd" id="1_w30o5"]
+[ext_resource type="Texture2D" uid="uid://dj6l1uu8qo6ty" path="res://Collectables/Food/assets/food-pumpkin.png" id="2_4wapi"]
+[ext_resource type="AudioStream" uid="uid://ct7x6ofy1op60" path="res://Sounds/omnom.wav" id="3_44jk3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvwl5"]
+radius = 3.9997
+height = 11.9991
+
+[node name="Pumpkin" type="Area2D" groups=["Food"]]
+script = ExtResource("1_w30o5")
+
+[node name="Pumpkins" type="Sprite2D" parent="."]
+texture = ExtResource("2_4wapi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.01879e-10, 1)
+rotation = -1.58307
+shape = SubResource("CapsuleShape2D_rvwl5")
+
+[node name="pumpkin_eat" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_44jk3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

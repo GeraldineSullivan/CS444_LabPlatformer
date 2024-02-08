@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuvktyrlvpm4k"]
+
+[ext_resource type="Script" path="res://UI/Scripts/UIHeartManager.gd" id="1_viv3d"]
+[ext_resource type="FontFile" uid="uid://cp6vijshrqdac" path="res://Game Main/Assets/pixel_font.ttf" id="2_hdj1k"]
+[ext_resource type="Texture2D" uid="uid://op723ayeam82" path="res://Collectables/Hearts/assets/collectable-heart.png" id="2_mhgh0"]
+
+[node name="heart_counter" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+use_top_left = true
+
+[node name="UIManager" type="CanvasLayer" parent="."]
+script = ExtResource("1_viv3d")
+
+[node name="HeartIcon" type="TextureRect" parent="UIManager"]
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("2_mhgh0")
+
+[node name="HeartDisplay" type="Label" parent="UIManager"]
+offset_left = 24.0
+offset_top = 5.0
+offset_right = 64.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_hdj1k")
+theme_override_font_sizes/font_size = 16
+text = "0
+"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://y1qk28x34rlc"]
+
+[ext_resource type="Script" path="res://Levels/StoredPolygonLevels/polygonLevel.gd" id="1_k8tna"]
+[ext_resource type="PackedScene" uid="uid://d3pmvan0var1w" path="res://Levels/StoredPolygonLevels/Objects/tree_leaning.tscn" id="2_6nrq8"]
+[ext_resource type="PackedScene" uid="uid://ce4dc313y68k7" path="res://Levels/StoredPolygonLevels/Objects/tree_tall.tscn" id="3_cu6dw"]
+[ext_resource type="PackedScene" uid="uid://l6thjoqar8m4" path="res://Player/player-animated.tscn" id="4_0ghke"]
+
+[node name="oldleveltwo" type="Node2D"]
+script = ExtResource("1_k8tna")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, 48)
+polygon = PackedVector2Array(0, -24, 0, 16, -16, 24, -16, 64, -40, 72, -32, 104, -56, 104, -64, 144, 448, 144, 400, 120, 376, 72, 352, 72, 360, 40, 344, 24, 336, 0, 320, 0, 320, -24, 296, -16, 296, 0, 272, 24, 272, 48, 296, 64, 296, 80, 264, 104, 256, 104, 264, 72, 224, 64, 208, 40, 232, 32, 232, -8, 208, 0, 208, 16, 176, 40, 176, 64, 200, 96, 192, 128, 176, 128, 160, 88, 144, 80, 152, 112, 120, 128, 104, 104, 112, 64, 136, 32, 96, 48, 80, 88, 64, 104, 40, 96, 56, 64, 40, 40, 40, 8, 24, 8, 24, -24)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+position = Vector2(0, 48)
+
+[node name="TreeLeaning" parent="." instance=ExtResource("2_6nrq8")]
+position = Vector2(213, 106)
+rotation = 0.261799
+
+[node name="TreeTall" parent="." instance=ExtResource("3_cu6dw")]
+position = Vector2(23, 80)
+rotation = 0.785397
+
+[node name="TreeLeaning2" parent="." instance=ExtResource("2_6nrq8")]
+position = Vector2(130, 144)
+rotation = -0.261799
+
+[node name="Player" parent="." instance=ExtResource("4_0ghke")]
+position = Vector2(16, 0)
